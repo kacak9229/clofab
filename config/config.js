@@ -7,6 +7,6 @@ module.exports = {
   twitter: {
     consumerKey: process.env.TWITTER_KEY || 'SasbOIW0U2seDnQu0Ngm46MFH',
     consumerSecret: process.env.TWITTER_SECRET || 'uz37sTXn0s7IzsRuJOOW3EVXJM2Xw5PDkDAcpICL9A0nofBVUF',
-    callbackURL: 'http://127.0.0.1:3000/login/twitter/return'
+    callbackURL: 'http://chattertesting.herokuapp.com/login/twitter/return'
   }
 }

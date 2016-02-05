@@ -1,0 +1,28 @@
+<% layout('layout') -%>
+
+
+<div class="row">
+  <div class="col-lg-6 col-md-offset-3" id="top-space">
+    <form role="form" id="post-form">
+      <div class="input-group">
+        <input type="text" class="form-control input-lg" name="content" id="post" placeholder="What's on your mind.." />
+        <span class="input-group-btn">
+          <button class="btn btn-primary btn-lg" type="submit">Post</button>
+        </span>
+      </div>
+    </form>
+
+    <div id="top-space">
+
+    </div>
+
+
+    <ul class="list-group" id="newPost">
+      <% posts.forEach(function(post) { %>
+        <li class="list-group-item"><%= post.content %></li>
+        <% }) %>
+      </ul>
+
+
+    </div>
+  </div>

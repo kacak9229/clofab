@@ -1,0 +1,106 @@
+
+#top-space {
+  padding-top: 70px;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%;
+}
+
+@media (max-width:768px)
+{
+
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 9;
+    width: 20%;
+}
+}
+
+.glyphicon {
+  font-size: 19px;
+}
+
+.badge-notify{
+   background: #e74c3c;
+   position:relative;
+   top: -8px;
+   left: -25px;
+}
+
+.product-image {
+  width: 20%;
+  padding-bottom: 12px;
+}
+
+.spaces-text {
+  margin-right: 4%;
+}
+
+#spaces-bottom {
+  padding-top: 5%;
+}
+
+ul.dropdown-cart{
+    min-width:250px;
+}
+ul.dropdown-cart li .item{
+    display:block;
+    padding:3px 10px;
+    margin: 3px 0;
+}
+ul.dropdown-cart li .item:hover{
+    background-color:#f3f3f3;
+}
+ul.dropdown-cart li .item:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+ul.dropdown-cart li .item-left{
+    float:left;
+}
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info{
+    float:left;
+}
+ul.dropdown-cart li .item-left span.item-info{
+    margin-left:10px;
+}
+ul.dropdown-cart li .item-left span.item-info span{
+    display:block;
+}
+ul.dropdown-cart li .item-right{
+    float:right;
+}
+ul.dropdown-cart li .item-right button{
+    margin-top:14px;
+}
+
+.friend-request-img {
+  margin: 3%;
+  width: 34%;
+}
+
+.button-request {
+  margin: 20%;
+}

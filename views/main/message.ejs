@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+	<title>Facebook Clone</title>
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	<link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+
+	<div class="header-bg"></div>
+
+	<!-- left pane -->
+	<div class="container">
+		<div class="chatbox row clearfix">
+			<div class="col-sm-4 col-xs-6">
+				<div class="row">
+					<div class="left-pane">
+						<!-- Logged in user -->
+						<header class="user active">
+							<div class="info-pane">
+								<div class="pic">
+									<img src="images/user.jpg" alt="">
+								</div>
+							</div>
+							<div class="opts">
+								<a href="#"><i class="material-icons">chat</i></a>
+								<a href="#"><i class="material-icons">more_vert</i></a>
+							</div>
+						</header>
+						<div class="search">
+							<form action="#">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="material-icons">search</i></span>
+									<input type="text" class="form-control" placeholder="Search or start new chat">
+								</div>
+							</form>
+						</div>
+						<!-- Searched or available users -->
+						<div class="users">
+              <% user.friends.forEach(function(friend) { %>
+                <div class="user">
+  								<div class="info-pane">
+  									<div class="pic">
+  										<img src="<%= friend.friend.picture %>" alt="">
+  									</div>
+  									<div class="info">
+  										<p class="name"><%= friend.friend.username %></p><small class="time">20:44</small>
+  										<p class="activity"><i class="material-icons sent">done_all</i> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+  									</div>
+  								</div>
+  							</div>
+
+              <% }) %>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- right pane -->
+			<div class="col-sm-8 col-xs-6">
+				<div class="row">
+					<div class="right-pane">
+						<header class="user active">
+							<div class="info-pane">
+								<div class="pic">
+									<img src="<%= foundUser.picture %>" alt="">
+								</div>
+								<div class="info">
+									<p class="name"><%= foundUser.username %></p>
+									<p class="activity">last seen 1/18/2016 at 8:00 PM</p>
+								</div>
+							</div>
+							<div class="opts">
+								<a href="#"><span class="glyphicon glyphicon-paperclip"></span></a>
+								<a href="#"><i class="material-icons">more_vert</i></a>
+							</div>
+						</header>
+						<!-- Chat messages will apear here -->
+						<div class="chat-msgs clearfix">
+              <% if (room !== null) { %>
+              <% room.messages.forEach(function(message) { %>
+                <% if (String(user._id) === String(message.creator._id)) {  %>
+                  <div class="bubble right">
+                    <p><%= message.message %></p>
+                    <small class="time">12:03<i class="material-icons">done_all</i></small>
+                  </div>
+                <% } else { %>
+                <div class="bubble left">
+                  <p><%= message.message %></p>
+                  <small class="time">12:03<i class="material-icons">done_all</i></small>
+                </div>
+
+                <% } %>
+
+            <% })%>
+            <% } %>
+
+
+
+						</div>
+
+						<div class="compose">
+							<div class="opts">
+								<a href="#"><i class="material-icons">tag_faces</i></a>
+							</div>
+							<div class="type-msg">
+                <input type="hidden" id="targetedUser" value="<%= foundUser._id %>" />
+                <input type="hidden" id="username" value="<%= user.username %>" />
+								<form id="sendMessage" action="#">
+                  <input type="text" id="message" class="form-control" placeholder="Type a message">
+
+                </form>
+							</div>
+							<div class="opts">
+								<a href="#"><i class="material-icons">keyboard_voice</i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/custom.js"></script>
+</body>
+</html>

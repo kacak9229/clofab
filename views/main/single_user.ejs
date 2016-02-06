@@ -19,7 +19,8 @@
 
             <% var myFriend = false; var friend; var otherFriend;
               user.friends.forEach(function(friend) { %>
-              <p><%= friend.friend._id %></p>
+              <p> friends <%= friend.friend._id %></p>
+              <p> TargetedFriend <%= otherUser._id %></p>
               <% if ((String(friend.friend._id) === String(otherUser._id)))  { %>
                 <% myFriend = true; %>
               <% } else { %>

@@ -24,7 +24,7 @@
     <% user.friends.forEach(function(friend) { %>
       <tr>
         <td><%= friend.friend.username %></td>
-        <td><button class="btn btn-success">Message<% friend.friend.username %></button></td>
+        <td><a href="/message/<%= friend.friend._id %>" class="btn btn-success">Message<%= friend.friend.username %></button></td>
       </tr>
     <% }) %>
       

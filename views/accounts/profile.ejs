@@ -12,5 +12,24 @@
   </div>
 
 
+  <div class="col-sm-6">
+  	<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Friends</th>
+        <th>message</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% user.friends.forEach(function(friend) { %>
+      <tr>
+        <td><%= friend.friend.username %></td>
+        <td><button class="btn btn-success">Message<% friend.friend.username %></button></td>
+      </tr>
+    <% }) %>
+      
+    </tbody>
+  </table>
+  </div>
 
 </div>

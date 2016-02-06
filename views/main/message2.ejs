@@ -10,7 +10,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+	rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="/css/chat2.css">
 </head>
@@ -51,8 +51,8 @@
 						</div>
 						<!-- Searched or available users -->
 						<div class="users">
-							 <% user.friends.forEach(function(friend) { %>
-					
+							<% user.friends.forEach(function(friend) { %>
+
 							<div class="user" value="<%= friend.friend._id %>">
 								<input type="hidden" id="userId" value="<%= friend.friend._id %>" />
 								<div class="info-pane">
@@ -69,7 +69,8 @@
 									</div>
 								</div>
 							</div>
-							  <% }) %>
+							
+							<% }) %>
 
 						</div>
 					</div>
@@ -84,11 +85,11 @@
 							
 							<p class="to">To: <span id="recipient"></span></p>
 
-							 <% if (room !== null) { %>
-              <% room.messages.forEach(function(message) { %>
-                <% if (String(user._id) === String(message.creator._id)) {  %>
+							<% if (room !== null) { %>
+							<% room.messages.forEach(function(message) { %>
+							<% if (String(user._id) === String(message.creator._id)) {  %>
 
-                			<div class="message right">
+							<div class="message right">
 								<span class="pic"><img src="<%= user.picture %>" alt="user"></span>
 								<div class="bubble right">
 									<p><%= message.message %></p>
@@ -97,9 +98,9 @@
 							</div>
 							
 
-					<% } else { %>
-						
-						
+							<% } else { %>
+
+
 
 
 							<div class="message left">
@@ -110,10 +111,10 @@
 								</div>
 							</div>
 
-						<% } %>
+							<% } %>
 
-            <% })%>
-            <% } %>
+							<% })%>
+							<% } %>
 
 							
 							
@@ -123,7 +124,7 @@
 						<!-- Message - compose field -->
 						<div class="compose">
 							<input type="hidden" id="targetedUser" value="<%= foundUser._id %>" />
-                		    <input type="hidden" id="username" value="<%= user.username %>" />
+							<input type="hidden" id="username" value="<%= user.username %>" />
 							<form action="#" id="sendMessage" class="form-group">
 								
 								<div class="input-group">

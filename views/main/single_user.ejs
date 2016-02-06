@@ -17,14 +17,18 @@
               <% } %>
             <% }) %>
 
-            <% var  myFriend = false;
+            <% var myFriend = false; var friend; var otherFriend;
               user.friends.forEach(function(friend) { %>
               <% if ((String(friend.friend._id) === String(otherUser._id)))  { %>
                 <% myFriend = true; %>
+                <% friend = friend.friend._id %>
+                <% otherFriend = otherUser._id %>
               <% } else { %>
                 <%  myFriend = false; %>
               <% } %>
             <% }) %>
+
+            <p><%= friend %> ++++ <%= otherFriend %></p>
 
             <% if (userRequested) {%>
                 <button type="submit" id="addFriend" class="btn btn-success" disabled>

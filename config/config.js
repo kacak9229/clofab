@@ -10,3 +10,4 @@ module.exports = {
     callbackURL: 'http://chattertesting.herokuapp.com/login/twitter/return'
   }
 }
+

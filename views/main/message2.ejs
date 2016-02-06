@@ -53,7 +53,7 @@
 						<div class="users">
 							<% user.friends.forEach(function(friend) { %>
 
-							<div class="user" value="<%= friend.friend._id %>">
+							<div class="user">
 								<input type="hidden" id="userId" value="<%= friend.friend._id %>" />
 								<div class="info-pane">
 									<div class="pic">
@@ -81,36 +81,39 @@
 			<div class="col-sm-7">
 				<div class="row">
 					<div class="chatbox">
-						<div class="chat-msgs clearfix" id="chatMsgs">
+						<div class="chat-msgs clearfix">
 							
 							<p class="to">To: <span id="recipient"></span></p>
+							<div id="chatMsgs">
 
-							<% if (room !== null) { %>
-							<% room.messages.forEach(function(message) { %>
-							<% if (String(user._id) === String(message.creator._id)) {  %>
+								<% if (room !== null) { %>
+								<% room.messages.forEach(function(message) { %>
+								<% if (String(user._id) === String(message.creator._id)) {  %>
 
-							<div class="message right">
-								<span class="pic"><img src="<%= user.picture %>" alt="user"></span>
-								<div class="bubble right">
-									<p><%= message.message %></p>
-									<small class="time">12:03<i class="material-icons sent">done_all</i></small>
+								<div class="message right">
+									<span class="pic"><img src="<%= user.picture %>" alt="user"></span>
+									<div class="bubble right">
+										<p><%= message.message %></p>
+										<small class="time">12:03<i class="material-icons sent">done_all</i></small>
+									</div>
 								</div>
-							</div>
-							
-							<% } else { %>
 
-							<div class="message left">
-								<span class="pic"><img src="<%= foundUser.picture %>" alt="user"></span>
-								<div class="bubble left">
-									<p><%= message.message %></p>
-									<small class="time">12:03<i class="material-icons sent">done_all</i></small>
+								<% } else { %>
+
+								<div class="message left">
+									<span class="pic"><img src="<%= foundUser.picture %>" alt="user"></span>
+									<div class="bubble left">
+										<p><%= message.message %></p>
+										<small class="time">12:03<i class="material-icons sent">done_all</i></small>
+									</div>
 								</div>
+
+								<% } %>
+
+								<% })%>
+								<% } %>
+
 							</div>
-
-							<% } %>
-
-							<% })%>
-							<% } %>
 
 							
 							

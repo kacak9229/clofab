@@ -68,7 +68,7 @@ $(function() {
     } else {
       html += '<div class="message left">';
       html += '<span class="pic"><img src="' + data.picture + '>" alt="user"></span>';
-      html += '<div class="bubble left"'>;
+      html += '<div class="bubble left">';
       html += '<p>' + data.message + '</p>';
       html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
       html += '</div></div>';

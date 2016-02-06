@@ -17,14 +17,12 @@
               <% } %>
             <% }) %>
 
-            <% var myFriend = false; var friend; var otherFriend;
+            <% var myFriend = false;
               user.friends.forEach(function(friend) { %>
-              <p> friends <%= friend.friend._id %></p>
-              <p> TargetedFriend <%= otherUser._id %></p>
               <% if ((String(friend.friend._id) === String(otherUser._id)))  { %>
-                <% myFriend = true; %>
+                <% myFriend = true; break; %>
               <% } else { %>
-                <%  myFriend = false; %>
+                <%  myFriend = false; break;%>
               <% } %>
             <% }) %>
 

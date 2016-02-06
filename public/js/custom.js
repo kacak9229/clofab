@@ -28,10 +28,15 @@ $(function() {
   $('#sendMessage').submit(function(){
     var input = $('#message').val();
     var targetedUser = $('#targetedUser').val();
-    chatTo(input, targetedUser);
+    if (input === '') {
+      return false;
+    } else {
+      chatTo(input, targetedUser);
     $('#chatMsgs').scrollTop($('#chatMsgs').height());
     $('#message').val('');
     return false;
+    }
+    
   });
 
   // Message Whatsapp

@@ -48,7 +48,7 @@ module.exports = function(express, io) {
         .findOne({ "users": { "$all": [ req.user._id, foundUser._id ] }})
         .populate('messages.creator')
         .exec(function(err, foundRoom) {
-          res.render('main/message', { foundUser: foundUser, room: foundRoom });
+          res.render('main/message2', { foundUser: foundUser, room: foundRoom });
         });
       }
     ]);

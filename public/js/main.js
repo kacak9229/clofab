@@ -16,7 +16,7 @@ $(document).ready(function() {
 	// });
 
 	$(document).on('click', '.user', function() {
-		var userId = $('#userId').val();
+		var userId = $(this).val();
 
 		$.ajax({
 			url: '/api/message/' + userId,

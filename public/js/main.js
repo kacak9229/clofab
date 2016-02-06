@@ -22,6 +22,7 @@ $(document).on('click', '.user', function() {
 		type: 'GET',
 		dataType: 'json',
 		success: function(data) {
+			$('.chat-msgs').empty();
 			data.room.messages.forEach(function(message) {
 				var html = '';
 				if (message.creator._id !== userId) {

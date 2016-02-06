@@ -21,7 +21,6 @@
               user.friends.forEach(function(friend) { %>
               <% if ((String(friend.friend._id) === String(otherUser._id)))  { %>
                 <% myFriend = true;%>
-                <% break %>
               <% } else { %>
                 <%  myFriend = false; %>
               <% } %>

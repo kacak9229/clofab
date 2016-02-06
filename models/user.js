@@ -23,5 +23,16 @@ var UserSchema = new Schema({
 
 });
 
+// UserSchema.methods.friendsRequest = function(otherId) {
+  
 
-  module.exports = mongoose.model('User', UserSchema);
+
+// }
+
+// UserSchema.methods.friends = function(otherId) {
+  
+  
+
+// }
+
+module.exports = mongoose.model('User', UserSchema);

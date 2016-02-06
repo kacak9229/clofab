@@ -74,8 +74,9 @@ $(function() {
       html += '</div></div>';
       
     }
-    
+
     $('.chat-msgs').append(html);
+    $('#chatMsgs').scrollTop($('#chatMsgs').height());
 
   })
 

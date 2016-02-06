@@ -52,6 +52,5 @@ $(document).on('click', '.user', function() {
 
 })
 
-$(document).scrollTop($(document).height());
 
 });

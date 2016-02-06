@@ -59,7 +59,7 @@ $(function() {
     var html = '';
     if (data.sender === username) {
       html += '<div class="message right">';
-      html += '<span class="pic"><img src="' + data.picture + '>" alt="user"></span>';
+      html += '<span class="pic"><img src="' + data.picture + '" alt="user"></span>';
       html += '<div class="bubble right">';
       html += '<p>' + data.message + '</p>';
       html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
@@ -67,7 +67,7 @@ $(function() {
       
     } else {
       html += '<div class="message left">';
-      html += '<span class="pic"><img src="' + data.picture + '>" alt="user"></span>';
+      html += '<span class="pic"><img src="' + data.picture + '" alt="user"></span>';
       html += '<div class="bubble left">';
       html += '<p>' + data.message + '</p>';
       html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';

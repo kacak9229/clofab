@@ -52,6 +52,6 @@ $(document).on('click', '.user', function() {
 
 })
 
-$('#chatMsgs').scrollTop($(this).height());
+$(document).scrollTop($(document).height());
 
 });

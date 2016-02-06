@@ -33,24 +33,51 @@ $(function() {
     return false;
   });
 
+  // Message Whatsapp
+  // socket.on('incomingChat', function(data) {
+  //   var username = $('#username').val();
+  //   var html = '';
+  //   if (data.sender === username) {
+  //     html += '<div class="bubble right">';
+  //     html +=  '<p>' + data.message + '</p>';
+  //     html += '<small class="time">12:03<i class="material-icons">done</i></small>'
+  //     html += '</div>';
+  //   } else {
+  //     html += '<div class="bubble left">';
+  //     html +=  '<p>' + data.message + '</p>';
+  //     html += '<small class="time">12:03<i class="material-icons">done</i></small>'
+  //     html += '</div>';
+  //   }
 
+  //   $('.chat-msgs').append(html);
+  // });
+
+
+  // Custom Message
   socket.on('incomingChat', function(data) {
     var username = $('#username').val();
     var html = '';
     if (data.sender === username) {
-      html += '<div class="bubble right">';
-      html +=  '<p>' + data.message + '</p>';
-      html += '<small class="time">12:03<i class="material-icons">done</i></small>'
-      html += '</div>';
+      html += '<div class="message right">';
+      html += '<span class="pic"><img src="' + data.picture + '>" alt="user"></span>';
+      html += '<div class="bubble right"'>;
+      html += '<p>' + data.message + '</p>';
+      html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
+      html += '</div></div>';
+      
     } else {
-      html += '<div class="bubble left">';
-      html +=  '<p>' + data.message + '</p>';
-      html += '<small class="time">12:03<i class="material-icons">done</i></small>'
-      html += '</div>';
+      html += '<div class="message left">';
+      html += '<span class="pic"><img src="' + data.picture + '>" alt="user"></span>';
+      html += '<div class="bubble left"'>;
+      html += '<p>' + data.message + '</p>';
+      html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
+      html += '</div></div>';
+      
     }
 
     $('.chat-msgs').append(html);
-  });
+
+  })
 
   $('#post-form').submit(function(){
     var post = $('#post').val();

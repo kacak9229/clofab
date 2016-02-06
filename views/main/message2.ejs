@@ -86,20 +86,24 @@
 							 <% if (room !== null) { %>
               <% room.messages.forEach(function(message) { %>
                 <% if (String(user._id) === String(message.creator._id)) {  %>
-							
-							<div class="message left">
-								<span class="pic"><img src="<%= user.picture %>" alt="user"></span>
-								<div class="bubble left">
+
+                			<div class="message right">
+								<span class="pic"><img src="<%= foundUser.picture %>" alt="user"></span>
+								<div class="bubble right">
 									<p><%= message.message %></p>
 									<small class="time">12:03<i class="material-icons sent">done_all</i></small>
 								</div>
 							</div>
+							
 
 					<% } else { %>
 						
-							<div class="message right">
-								<span class="pic"><img src="<%= foundUser.picture %>" alt="user"></span>
-								<div class="bubble right">
+						
+
+
+							<div class="message left">
+								<span class="pic"><img src="<%= user.picture %>" alt="user"></span>
+								<div class="bubble left">
 									<p><%= message.message %></p>
 									<small class="time">12:03<i class="material-icons sent">done_all</i></small>
 								</div>

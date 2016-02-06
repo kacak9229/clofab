@@ -96,11 +96,11 @@ module.exports = function(express, io) {
           User.findOne({_id: data.targetedUser}, function(err, foundUser) {
             // Send to other user, by searching his/her specific socket
             io.to(foundUser.socketId).emit('incomingChat', {
-              sender: user.username, message: data.message
+              sender: user.username, message: data.message, picture: user.picture
             });
             // Sending to himself
             socket.emit('incomingChat', {
-              sender: user.username, message: data.message
+              sender: user.username, message: data.message, picture: user.picture
             });
             callback(err);
           })

@@ -54,6 +54,27 @@ module.exports = function(express, io) {
     ]);
 
   });
+
+
+  router.get('/api/message/:id', function(req, res, next) {
+    async.waterfall([
+      function(callback) {
+        User.findOne({ _id: req.params.id }, function(err, foundUser) {
+          callback(err, foundUser);
+        });
+
+      },
+      function(foundUser) {
+        Room
+        .findOne({ "users": { "$all": [ req.user._id, foundUser._id ] }})
+        .populate('messages.creator')
+        .exec(function(err, foundRoom) {
+          res.json({ foundUser: foundUser, room: foundRoom });
+        });
+      }
+    ]);
+  });
+
   // Accept friend Request
   router.post('/accept-friend', function(req, res, next) {
     var userId = req.body.userId;

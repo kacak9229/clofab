@@ -6,13 +6,28 @@ $(document).ready(function() {
 	$('#recipient').text(activeUser);
 	$('.message.left').find('.pic').children('img').attr('src', activeUserPhoto);
 
-	// Triger the recipient name and image
-	$('.user').click(function() {
-		var name = $(this).find("p.name").text(),
-		photo = $(this).find('img').attr('src');
-		$('#recipient').text(name);
-		// alert(photo);
-		$('.message.left').find('.pic').children('img').attr('src', photo);
-	});
+	// // Triger the recipient name and image
+	// $('.user').click(function() {
+	// 	var name = $(this).find("p.name").text(),
+	// 	photo = $(this).find('img').attr('src');
+	// 	$('#recipient').text(name);
+	// 	// alert(photo);
+	// 	$('.message.left').find('.pic').children('img').attr('src', photo);
+	// });
+
+	$(document).on('click', '.user', function(e) {
+		var userId = $('userId').val();
+
+		$.ajax({
+			url: '/api/message/' + userId,
+			type: 'GET',
+			dataType: 'json',
+			success: function(data) {
+				console.log(data);
+			}
+			
+		});
+
+	})
 
 });

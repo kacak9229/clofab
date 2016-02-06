@@ -29,6 +29,7 @@ $(function() {
     var input = $('#message').val();
     var targetedUser = $('#targetedUser').val();
     chatTo(input, targetedUser);
+    $('#chatMsgs').scrollTop($('#chatMsgs').height());
     $('#message').val('');
     return false;
   });
@@ -76,7 +77,7 @@ $(function() {
     }
 
     $('.chat-msgs').append(html);
-    $('#chatMsgs').scrollTop($('#chatMsgs').height());
+    
 
   })
 

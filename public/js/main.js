@@ -15,8 +15,8 @@ $(document).ready(function() {
 	// 	$('.message.left').find('.pic').children('img').attr('src', photo);
 	// });
 
-	$(document).on('click', '.user', function(e) {
-		var userId = $('userId').val();
+	$(document).on('click', '.user', function() {
+		var userId = $('#userId').val();
 
 		$.ajax({
 			url: '/api/message/' + userId,

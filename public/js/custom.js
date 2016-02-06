@@ -74,7 +74,7 @@ $(function() {
       html += '</div></div>';
       
     }
-
+    
     $('.chat-msgs').append(html);
 
   })

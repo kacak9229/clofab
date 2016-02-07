@@ -1,7 +1,7 @@
 $(function() {
 
   var socket = io();
-
+  $('#chatMsgs').scrollTop($('#chatMsgs')[0].scrollHeight);
 
   function friendRequests(data) {
     var html = '';

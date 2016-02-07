@@ -23,11 +23,6 @@ img {
 	border-right: 1px solid #DDD;
 	box-sizing: border-box;
 }
-.chatbox {
-	overflow-x: hidden;
-	overflow-y: auto;
-	background-color: #FFF;
-}
 .user {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -318,9 +313,12 @@ h1.title {
 }
 
 /*chat message section*/
+.chatbox {
+	background-color: #FFF;
+}
 .chat-msgs {
-	height: 82vh;
-	padding: 15px;
+	height: 81vh;
+	padding: 35px 15px 0;
 	overflow-x: hidden;
 	overflow-y: auto;
 }

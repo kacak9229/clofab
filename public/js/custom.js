@@ -1,7 +1,6 @@
 $(function() {
 
   var socket = io();
-  $('#chatMsgs').scrollTop($('#chatMsgs')[0].scrollHeight);
 
   function friendRequests(data) {
     var html = '';
@@ -15,7 +14,7 @@ $(function() {
     html += '<button class="btn btn-xs btn-danger pull-right" id="decline-friend-request" value=' +  data._id + '>Decline</button>';
     html += '<button class="btn btn-xs btn-success pull-right" id="add-friend-request" value=' +  data._id + '>Accept</button>';
     html += '</span></span></li>';
-    
+
     return html;
   }
 
@@ -35,7 +34,7 @@ $(function() {
     $('#message').val('');
     return false;
     }
-    
+
   });
 
   // Message Whatsapp
@@ -69,7 +68,7 @@ $(function() {
       html += '<p>' + data.message + '</p>';
       html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
       html += '</div></div>';
-      
+
     } else {
       html += '<div class="message left">';
       html += '<span class="pic"><img src="' + data.picture + '" alt="user"></span>';
@@ -77,12 +76,12 @@ $(function() {
       html += '<p>' + data.message + '</p>';
       html += '<small class="time">12:03<i class="material-icons sent">done_all</i></small>';
       html += '</div></div>';
-      
+
     }
 
     $('.chat-msgs').append(html);
     $('#chatMsgs').scrollTop($('#chatMsgs')[0].scrollHeight);
-    
+
 
   })
 
